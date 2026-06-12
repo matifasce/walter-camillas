@@ -762,3 +762,69 @@ footer .msf {
 .canal-item:hover .fa-whatsapp {
     color: white;
 }
+/* ==========================================================================
+   OPTIMIZACIÓN RESPONSIVE PARA CELULARES (CORRECCIÓN HERO Y MENÚ)
+   ========================================================================== */
+@media (max-width: 768px) {
+    
+
+
+    /* Los botones individuales (Inicio, Productos, etc.) */
+  
+
+    /* El logo redondo de las ramas de sakura */
+    .logo, 
+    header img {
+        width: 55px !important; /* Lo achicamos un poquito en celular */
+        height: auto;
+        margin-bottom: 5px;
+    }
+
+    /* 2. Le damos aire a la sección roja (Hero) para que no se pegue arriba */
+    .hero,
+    .hero-section,
+    main section:first-of-type {
+        padding-top: 40px !important; /* Espacio para que respire el título */
+        padding-bottom: 40px !important;
+    }
+
+    /* 3. Corregimos el título principal que está gigante */
+    .hero h1,
+    .hero-title,
+    .hero h2 {
+        font-size: 2rem !important; /* Tamaño ideal para pantallas de celular */
+        line-height: 1.2 !important;
+        margin-bottom: 15px !important;
+    }
+    
+    /* El texto descriptivo en móvil */
+    .hero p {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+    }
+}
+@media (max-width: 768px) {
+    
+    /* ... (los estilos del menú que ya pegaste antes) ... */
+
+    /* 2. Ajustamos la sección roja (Hero) y su imagen de fondo */
+    .hero,
+    .hero-section,
+    main section:first-of-type {
+        padding-top: 40px !important; 
+        padding-bottom: 40px !important;
+        
+        /* ¡ESTO CORRIGE LA IMAGEN DE FONDO! */
+        background-size: cover !important;      /* Fuerza a la imagen a cubrir todo el alto y ancho sin deformarse */
+        background-position: center !important;  /* Centra las ramas de sakura para que no se recorten en una esquina */
+        background-attachment: scroll !important; /* En celulares es mejor que ruede con la pantalla para evitar saltos visuales */
+        
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* En caso de que uses un contenedor decorativo extra o un overlay encima */
+    .hero::before {
+        background-color: rgba(42, 4, 10, 0.4); /* Le da un toque sutil oscuro al fondo si el texto cuesta leerse */
+    }
+}
